@@ -6,8 +6,8 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 // Cosmos DB connection details
-const endpoint = "https://testcosmosacc233.documents.azure.com:443/";
-const key = "RhE9kNqEgqVDIrhRCuYeSpmISiXPgvoOMSjQywLstVnZiVnCPEYwx26Lnnv8Bd5WKbR3O4he66HFACDbPGAR9g==";
+const endpoint = process.env.COSMOS_URI;
+const key = process.env.COSMOS_PRIMARY_KEY;
 const client = new CosmosClient({ endpoint, key });
 // Your chosen database and container names
 const databaseId = "guestbook-db";
